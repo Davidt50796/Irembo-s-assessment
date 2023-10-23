@@ -1,0 +1,59 @@
+<div class="h-screen flex justify-center items-center">
+  <div class="w-1/2 rounded-lg border-2 p-2">
+    <form>
+      <div class="flex justify-center p-2">
+        <p class="text-3xl font-bold">Login</p>
+      </div>
+      <!-- <div class="imgcontainer">
+              <img src="../../assets/avatar.png" alt="Avatar" class="avatar">
+            </div> -->
+      <div class="container rounded">
+        <label class="pl-1" for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required />
+
+        <label class="pl-1" for="psw"><b>Password</b></label>
+        <input #password
+        type="password"
+        placeholder="Enter Password"
+        class="form-control"
+        name="psw"
+        (keyup)="checkPasswordStrength(password.value)"
+        id="psw"
+        minlength="8"
+        required
+        />
+        <label class="pl-1 {{color}}" for="psw"><b>{{passwordStrength}}</b></label>
+
+        <div class="flex justify-end">
+          <!-- <p class="text-blue-400 text-xs">Forgot password?</p> -->
+          <a
+            class="text-blue-400 text-xs"
+            (click)="resetPassword()"
+            target="_parent"
+            >Forgot password?</a
+          >
+        </div>
+
+        <div class="mt-3">
+          <button class="btn btn-blue" type="submit" (click)="login()">
+            Login
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="flex justify-center px-3">
+      <!-- <button class="btn text-blue-500" (click)="signup()" type="submit"> -->
+      <!-- <a class="font-light text-blue-500 underline" (click)="signup()" rel="noopener">
+                sign up
+            </a> -->
+      <a
+        class="font-light text-blue-500 underline"
+        (click)="signup()"
+        target="_parent"
+        >sign up</a
+      >
+
+      <!-- </button> -->
+    </div>
+  </div>
+</div>
