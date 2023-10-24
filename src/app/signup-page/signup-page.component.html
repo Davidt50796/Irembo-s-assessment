@@ -1,56 +1,107 @@
 <div class="h-screen flex items-center justify-center">
   <div class="flex justify-center w-1/2 border-2 rounded-lg">
     <div>
-      <div class="h-fit p-1">
+      <!-- <div class="h-fit p-1">
         <p class="font-bold text-3xl">Create your account</p>
-      </div>
+      </div> -->
       <form>
-        <div class="flex justify-center p-2">
-          <p class="text-3xl font-bold">Login</p>
+        <div class="flex justify-center p-4">
+          <p class="text-3xl font-bold">Create an account</p>
         </div>
-        <div class="flex flex-col">
-          <label class="pl-1" for="uname"><b>Name</b></label>
-          <input type="text" placeholder="Enter Name" name="uname" required />
+        <div class="flex flex-col mx-4">
+          <div class="flex flex-row">
+            <div class="w-1/2 mx-4">
+              <label class="pl-1" for="uname"><b>Name</b></label>
+              <input
+                type="text"
+                placeholder="Enter Name"
+                name="uname"
+                required
+              />
+            </div>
+            <div class="w-1/2 mx-4">
+              <label class="pl-1" for="uname"><b>Surname</b></label>
+              <input
+                type="text"
+                placeholder="Enter Surname"
+                name="uname"
+                required
+              />
+            </div>
+          </div>
 
-          <label class="pl-1" for="uname"><b>Surname</b></label>
-          <input
-            type="text"
-            placeholder="Enter Surname"
-            name="uname"
-            required
-          />
+          <div class="flex flex-row">
+            <div class="w-1/2 mx-4">
+              <label class="pl-1" for="uname"><b>Gender</b></label>
+              <input
+                type="text"
+                placeholder="Enter Gender"
+                name="uname"
+                required
+              />
+            </div>
+            <div class="w-1/2 mx-4">
+              <label class="pl-1" for="uname"><b>Age</b></label>
+              <input
+                type="text"
+                placeholder="Enter Age"
+                name="uname"
+                required
+              />
+            </div>
+          </div>
 
-          <label class="pl-1" for="uname"><b>Gender</b></label>
-          <input type="text" placeholder="Enter Gender" name="uname" required />
+          <div class="flex flex-row">
+            <div class="w-1/2 mx-4">
+              <label class="pl-1" for="uname"><b>Date of birth</b></label>
+              <input
+                type="text"
+                placeholder="Enter Date of birth"
+                name="uname"
+                required
+              />
+            </div>
+            <div class="w-1/2 mx-4">
+              <label class="pl-1" for="uname"><b>Marital status</b></label>
+              <input
+                type="text"
+                placeholder="Enter Marital status"
+                name="uname"
+                required
+              />
+            </div>
+          </div>
 
-          <label class="pl-1" for="uname"><b>Age</b></label>
-          <input type="text" placeholder="Enter Age" name="uname" required />
+          <div class="flex flex-row">
+            <div class="w-1/2 mx-4">
+              <label class="pl-1" for="psw"><b>Nationality</b></label>
+              <input
+                type="text"
+                placeholder="Enter Nationality"
+                name="psw"
+                required
+              />
+            </div>
+            <div class="w-1/2 mx-4">
+              <label class="pl-1" for="psw"><b>Password</b></label>
+              <input
+                #password
+                (keyup)="checkPasswordStrength(password.value)"
+                type="password"
+                placeholder="Enter Password"
+                class="form-control"
+                name="psw"
+                id="psw"
+                minlength="8"
+                required
+              />
+              <label class="pl-1 {{ color }}" for="psw"
+                ><b>{{ passwordStrength }}</b></label
+              >
+            </div>
+          </div>
 
-          <label class="pl-1" for="uname"><b>Date of birth</b></label>
-          <input
-            type="text"
-            placeholder="Enter Date of birth"
-            name="uname"
-            required
-          />
-
-          <label class="pl-1" for="uname"><b>Marital status</b></label>
-          <input
-            type="text"
-            placeholder="Enter Marital status"
-            name="uname"
-            required
-          />
-
-          <label class="pl-1" for="psw"><b>Nationality</b></label>
-          <input
-            type="text"
-            placeholder="Enter Nationality"
-            name="psw"
-            required
-          />
-
-          <div class="mt-3">
+          <div class="m-8 w-32 self-center">
             <button class="btn btn-blue" type="submit">submit</button>
           </div>
         </div>

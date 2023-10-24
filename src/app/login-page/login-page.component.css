@@ -19,7 +19,7 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button {
+/* button {
   background-color: #04AA6D;
   color: white;
   padding: 14px 20px;
@@ -27,6 +27,13 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+} */
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #0e5194;
+  background-color: #0e5194;
+  color: rgba(102, 102, 102, 0.38);
 }
 
 button:hover {
