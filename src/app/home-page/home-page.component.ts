@@ -13,4 +13,8 @@ export class HomePageComponent {
   logout() {
     this.router.navigate(['/login']);
   }
+
+  viewProfile() {
+    this.router.navigate(['/profile']);
+  }
 }

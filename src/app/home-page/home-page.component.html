@@ -4,16 +4,17 @@
       <div class="flex h-16 bg-blue-400 items-center px-10">
         <div class="self-end flex flex-col items-center">
           <img
-            class="h-8 w-auto lg:block rounded-full"
+            class="h-8 w-auto lg:block rounded-full cursor-pointer"
             src="../../assets/avatar.png"
             alt=""
+            (click)="viewProfile()"
           />
           <a
-        class="font-light cursor-pointer"
-        (click)="logout()"
-        target="_parent"
-        >Logout</a
-      >
+            class="font-light cursor-pointer"
+            (click)="logout()"
+            target="_parent"
+            >Logout</a
+          >
         </div>
       </div>
     </div>
