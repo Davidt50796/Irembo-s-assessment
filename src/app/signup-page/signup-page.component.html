@@ -1,167 +1,208 @@
 <div class="h-screen flex items-center justify-center">
-  <div class="flex justify-center w-3/4 border-2 rounded-lg">
+  <div class="flex justify-center border-2 rounded-lg">
     <div>
-      <!-- <div class="h-fit p-1">
-        <p class="font-bold text-3xl">Create your account</p>
-      </div> -->
       <form>
-        <div class="flex justify-center p-4">
+        <div class="flex justify-center p-2">
           <p class="text-3xl font-bold">Create an account</p>
         </div>
-        <div class="flex flex-col mx-4">
-          <div class="flex flex-row">
-            <div class="w-1/2 mx-4">
-              <label class="pl-1" for="uname"><b>First Name</b></label>
-              <input
-                #firstName
-                (keyup)="setFirstName(firstName.value)"
-                type="text"
-                placeholder="Enter first name"
-                name="firstname"
-                required
-              />
-            </div>
-            <div class="w-1/2 mx-4">
-              <label class="pl-1" for="uname"><b>Last Name</b></label>
-              <input
-                #lastName
-                (keyup)="setLastName(lastName.value)"
-                type="text"
-                placeholder="Enter last name"
-                name="lastname"
-                required
-              />
-            </div>
-            <div class="w-1/2 mx-4">
-              <label class="pl-1" for="uname"><b>User Name</b></label>
-              <input
-                #userName
-                (keyup)="setUserName(userName.value)"
-                type="text"
-                placeholder="Enter user name"
-                name="uname"
-                required
-              />
-            </div>
-          </div>
+        <div class="p-4">
+          <div class="flex justify-center">
+            <div class="flex flex-row mx-2">
+              <div class="w-80">
+                <div class="w-72">
+                  <div class="mx-2">
+                    <label class="pl-1" for="uname"><b>First Name</b></label>
+                    <input
+                      #firstName
+                      (keyup)="setFirstName(firstName.value)"
+                      type="text"
+                      placeholder="Enter first name"
+                      name="firstname"
+                      required
+                    />
+                  </div>
+                  <div class="mx-2">
+                    <label class="pl-1" for="uname"><b>Last Name</b></label>
+                    <input
+                      #lastName
+                      (keyup)="setLastName(lastName.value)"
+                      type="text"
+                      placeholder="Enter last name"
+                      name="lastname"
+                      required
+                    />
+                  </div>
 
-          <div class="flex flex-row">
-            <div class="w-1/2 mx-4">
-              <label class="pl-1" for="uname"><b>Gender</b></label>
-              <div class="flex flex-col my-2">
-                <div *ngFor="let status of genderOptions" class="flex flex-row items-center">
-                  <p class="text-sm mr-5 italic">{{status.label}}</p>
-                  <input
-                    class="ml-5 mb-3 bg-blue-500"
-                    type="radio"
-                    value={{status.value}}
-                    [checked]="status.value === gender"
-                    (change)="setGender($event)"
-                    name="uname"
-                    required
-                  />
+                  <div class="mx-2">
+                    <label class="pl-1" for="uname"><b>User Name</b></label>
+                    <input
+                      #userName
+                      (keyup)="setUserName(userName.value)"
+                      type="text"
+                      placeholder="Enter user name"
+                      name="uname"
+                      required
+                    />
+                  </div>
+
+                  <div class="flex flex-row">
+                    <div class="mx-2">
+                      <label class="pl-1" for="uname"><b>Gender</b></label>
+                      <div class="grid grid-cols-2 my-2">
+                        <div
+                          *ngFor="let status of genderOptions"
+                          class="flex flex-row items-center mr-2"
+                        >
+                          <input
+                            class="mb-3 mx-2 bg-blue-500 cursor-pointer"
+                            type="radio"
+                            value="{{ status.value }}"
+                            [checked]="status.value === gender"
+                            (change)="setGender($event)"
+                            name="uname"
+                            required
+                          />
+                          <p class="text-sm italic">{{ status.label }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mx-2">
+                    <label class="pl-1" for="uname"><b>Age</b></label>
+                    <input
+                      #age
+                      (keyup)="setAge(age.value)"
+                      type="number"
+                      placeholder="Enter Age"
+                      name="uname"
+                      required
+                    />
+                  </div>
+
+                  <div class="flex flex-row">
+                    <div class="mx-2">
+                      <label class="pl-1" for="uname"
+                        ><b>Date of birth</b></label
+                      >
+                      <mat-form-field>
+                        <mat-label>Choose a date</mat-label>
+                        <input
+                          matInput
+                          [matDatepicker]="picker"
+                          (dateChange)="setDateOfBirth($event)"
+                        />
+                        <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                        <mat-datepicker-toggle
+                          matIconSuffix
+                          [for]="picker"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-80">
+                <div class="w-72">
+                  <!-- <div class="mx-2">
+                    
+                    <p class="text-base">
+                      upload image:
+                    </p>
+                    <canvas id="canv1"></canvas>
+                      <input
+                        class="p-2"
+                        type="file"
+                        multiple="false"
+                        accept="image/*"
+                        id="finput"
+                        onchange="upload()"
+                      />
+                  </div> -->
+                  <div class="mx-2 flex flex-col">
+                    <label class="pl-1" for="uname"
+                      ><b>Marital status</b></label
+                    >
+                    <div class="grid grid-cols-2 justify-between my-2">
+                      <div
+                        *ngFor="let status of maritalStatusOptions"
+                        class="flex flex-row items-center"
+                      >
+                        <input
+                          class="ml-2 mb-3 bg-blue-500 cursor-pointer"
+                          type="radio"
+                          value="{{ status.value }}"
+                          [checked]="status.value === selectedMaritalStatus"
+                          (change)="setMaritalStatus($event)"
+                          name="uname"
+                          required
+                        />
+                        <p class="text-sm mr-5 italic">{{ status.label }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mx-2">
+                    <label class="pl-1" for="psw"><b>Nationality</b></label>
+                    <input
+                      #nationality
+                      (keyup)="setNationality(nationality.value)"
+                      type="text"
+                      placeholder="Enter Nationality"
+                      name="psw"
+                      required
+                    />
+                  </div>
+
+                  <div class="mx-2">
+                    <label class="pl-1" for="psw"><b>Password</b></label>
+                    <input
+                      #password
+                      (keyup)="checkPasswordStrength(password.value)"
+                      type="password"
+                      placeholder="Enter Password"
+                      class="form-control"
+                      name="psw"
+                      id="psw"
+                      minlength="8"
+                      required
+                    />
+                    <label
+                      class="pl-1 {{ color }} text-xs italic font-thin"
+                      for="psw"
+                      ><b>{{ passwordStrength }}</b></label
+                    >
+                  </div>
+                  <div class="mx-2">
+                    <label class="pl-1" for="psw"
+                      ><b>Re-enter password</b></label
+                    >
+                    <input
+                      #repassword
+                      (keyup)="checkPasswordIsSame(repassword.value)"
+                      type="password"
+                      placeholder="Enter Password"
+                      class="form-control"
+                      name="psw"
+                      id="psw"
+                      minlength="8"
+                      required
+                    />
+                    <label
+                      class="pl-1 text-xs text-red-500 italic font-thin"
+                      for="psw"
+                      ><b>{{ samePasswordStr }}</b></label
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="w-1/2 mx-4">
-              <label class="pl-1" for="uname"><b>Age</b></label>
-              <input
-                #age 
-                (keyup)="setAge(age.value)"
-                type="number"
-                placeholder="Enter Age"
-                name="uname"
-                required
-              />
-            </div>
           </div>
-
-          <div class="flex flex-row">
-            <div class="w-1/2 mx-4">
-              <label class="pl-1" for="uname"><b>Date of birth</b></label>
-              <mat-form-field>
-                <mat-label>Choose a date</mat-label>
-                <input
-                  matInput
-                  [matDatepicker]="picker"
-                  (dateChange)="setDateOfBirth($event)"
-                />
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle
-                  matIconSuffix
-                  [for]="picker"
-                ></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
+          <div class="w-full flex justify-center">
+            <div class="m-2 w-32 self-center">
+              <button class="btn btn-blue" type="submit" (click)="onSubmit()">
+                submit
+              </button>
             </div>
-            <div class="w-1/2 mx-4 flex flex-col">
-              <label class="pl-1" for="uname"><b>Marital status</b></label>
-              <div class="flex flex-col my-2">
-                <div *ngFor="let status of maritalStatusOptions" class="flex flex-row items-center">
-                  <p class="text-sm mr-5 italic">{{status.label}}</p>
-                  <input
-                    class="ml-5 mb-3 bg-blue-500"
-                    type="radio"
-                    value={{status.value}}
-                    [checked]="status.value === selectedMaritalStatus"
-                    (change)="setMaritalStatus($event)"
-                    name="uname"
-                    required
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="w-1/2 mx-4">
-            <label class="pl-1" for="psw"><b>Nationality</b></label>
-            <input
-              #nationality
-              (keyup)="setNationality(nationality.value)"
-              type="text"
-              placeholder="Enter Nationality"
-              name="psw"
-              required
-            />
-          </div>
-          <div class="flex flex-row">
-            <div class="w-1/2 mx-4">
-              <label class="pl-1" for="psw"><b>Password</b></label>
-              <input
-                #password
-                (keyup)="checkPasswordStrength(password.value)"
-                type="password"
-                placeholder="Enter Password"
-                class="form-control"
-                name="psw"
-                id="psw"
-                minlength="8"
-                required
-              />
-              <label class="pl-1 {{ color }} text-xs italic font-thin" for="psw"
-                ><b>{{ passwordStrength }}</b></label
-              >
-            </div>
-            <div class="w-1/2 mx-4">
-              <label class="pl-1" for="psw"><b>Re-enter password</b></label>
-              <input
-                #repassword
-                (keyup)="checkPasswordIsSame(repassword.value)"
-                type="password"
-                placeholder="Enter Password"
-                class="form-control"
-                name="psw"
-                id="psw"
-                minlength="8"
-                required
-              />
-              <label class="pl-1  text-xs text-red-500 italic font-thin" for="psw"
-                ><b>{{ samePasswordStr }}</b></label
-              >
-            </div>
-          </div>
-          <div class="m-8 w-32 self-center">
-            <button class="btn btn-blue" type="submit" (click)="onSubmit()">submit</button>
           </div>
         </div>
       </form>

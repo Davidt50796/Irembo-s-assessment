@@ -1,23 +1,26 @@
 <div class="h-screen">
-  <header class="h-fit">
-    <nav class="bg-white border-b-2 border-b-primary">
-      <div class="min-w-screen-2xl">
-        <div class="grid grid-cols-3 h-16 items-stretch px-10">
-          <div class="justify-self-start self-center">
-            <img
-              class="h-12 w-auto lg:block"
-              src="../../assets/avatar.png"
-              alt=""
-            />
-          </div>
-          <!-- <div class="h10 flex justify-center items-center">
-                <span class="font-black text-blue-900 text-3xl">{{ CurrentDayTime }}</span>
-              </div> -->
-          <!-- <div class="py-2 justify-self-end hover:cursor-auto self-center">
-                <img class="static h-12 w-auto lg:block " src="../../../assets/images/ikaze_logo.png" alt="">
-              </div> -->
+  <header class="h-fit w-full">
+    <div class="w-full">
+      <div class="flex h-16 bg-blue-400 items-center px-10">
+        <div class="self-end flex flex-col items-center">
+          <img
+            class="h-8 w-auto lg:block rounded-full"
+            src="../../assets/avatar.png"
+            alt=""
+          />
+          <a
+        class="font-light cursor-pointer"
+        (click)="logout()"
+        target="_parent"
+        >Logout</a
+      >
         </div>
       </div>
-    </nav>
+    </div>
   </header>
+  <main class="flex justify-center mb-auto mt-5">
+    <div class="flex">
+      <span class="text-xl">Welcome to company Z</span>
+    </div>
+  </main>
 </div>

@@ -23,12 +23,12 @@ export class LoginPageComponent {
 
   login() {
     if (this.userName.length && this.password.length > 7) {
-      let userBool = this.simulationService.checkIfUserExistsOnLogin(this.userName, this.password)
-      if (userBool) {
-        this.router.navigate(['/home-page']);
-      } else {
-        this.message = "User not found, please singup"
-      }
+      // let userBool = this.simulationService.checkIfUserExistsOnLogin(this.userName, this.password);
+      // if (userBool) {
+      this.router.navigate(['/home-page']);
+      // } else {
+      // this.message = "User not found, please singup"
+      // }
     }
   }
 

@@ -126,6 +126,13 @@ export class SignupPageComponent {
     this.userName = name;
   }
 
+  // upload(){
+  //   var imgcanvas = document.getElementById("canv1");
+  //   var fileinput = document.getElementById("finput");
+  //   var image = new SimpleImage(fileinput);
+  //   image.drawTo(imgcanvas);
+  // }
+
   onSubmit() {
     let user: User = {
       firstName: this.firstName,
