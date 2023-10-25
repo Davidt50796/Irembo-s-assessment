@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SimulationService } from 'src/services/simulation.service';
 
 @Component({
   selector: 'app-login-page',
@@ -12,8 +13,9 @@ export class LoginPageComponent {
   public userName = "";
   public passwordStrength = "";
   public color: string = "";
+  public message: string = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private simulationService: SimulationService) { }
 
   signup() {
     this.router.navigate(['/sign-up']);
@@ -21,7 +23,12 @@ export class LoginPageComponent {
 
   login() {
     if (this.userName.length && this.password.length > 7) {
-      this.router.navigate(['/home-page']);
+      let userBool = this.simulationService.checkIfUserExists(this.userName, this.password)
+      if (userBool) {
+        this.router.navigate(['/home-page']);
+      } else {
+        this.message = "Please singup"
+      }
     }
   }
 

@@ -8,6 +8,10 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
